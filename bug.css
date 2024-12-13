@@ -1,0 +1,10 @@
+The following CSS rule causes unexpected behavior in some browsers:
+
+```css
+div {
+  width: 50%;
+  height: 50%;
+}
+```
+
+The issue is that the `width` and `height` properties are percentages, and their reference is relative to the parent element's content box. If the parent doesn't have an explicitly set width or height, the percentages might not work as expected, resulting in an element that doesn't display as intended.
