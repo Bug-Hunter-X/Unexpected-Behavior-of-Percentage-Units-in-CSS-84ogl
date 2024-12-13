@@ -1,0 +1,41 @@
+Several approaches can solve the problem:
+
+1. **Set explicit dimensions on the parent:** The most straightforward solution is to define explicit `width` and `height` for the parent element.  This establishes a clear reference for the percentage calculations.
+
+```css
+div.parent {
+  width: 800px;
+  height: 600px;
+}
+div.child {
+  width: 50%;
+  height: 50%;
+}
+```
+
+2. **Use viewport units:**  If you want the element's dimensions to be relative to the viewport, use `vw` (viewport width) and `vh` (viewport height) units.
+
+```css
+div {
+  width: 50vw;
+  height: 50vh;
+}
+```
+
+3. **Set `box-sizing` to `border-box`:**  If you're using padding or border, make sure to set `box-sizing: border-box;` on the parent to ensure that padding and border are included in the total width and height calculations.  This prevents unexpected shrinking of the content area.
+
+```css
+div.parent {
+  box-sizing: border-box;
+  width: 800px;
+  height: 600px;
+  padding: 20px;
+  border: 10px solid #ccc;
+}
+div.child {
+  width: 50%;
+  height: 50%;
+}
+```
+
+Choose the solution most appropriate for your layout's needs.  The `bugSolution.css` file provides examples of these solutions.
